@@ -1,43 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+<head>
+  <title>React App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+
+<body>
+
+  <!-- ***** REACT RENDER ES6 ***** -->
+
+  < Only function <h1>Function</h1>
+
+    <p>This demonstrates a regular function, NOT an arrow function.</p>
+
+    <p id="demo"></p>
+
+    <script>
+      hello = function () {
+        return "Hello World!"
+      }
+
+      document.getElementById("demo").innerHTML = hello()
+    </script>
+
+
+    <!-- Arrow Function 
+  <h1>Arrow Function</h1>
+
+  <p>A demonstration of a simple arrow function.</p>
+
+  <p id="demo"></p>
+
+  <script>
+    hello = () => {
+      return "Hello World!";
+    }
+
+    document.getElementById("demo").innerHTML = hello();
+  </script>
+  -->
+
+    <!-- Arrow function with the implicit Return 
+  <h1>Arrow Function</h1>
+
+  <h2>Implicit Return</h2>
+
+  <p>The arrow function expects a return value, and returns the value by default, without the <strong>return</strong>
+    keyword.</p>
+
+  <p id="demo"></p>
+
+  <script>
+    hello = () => "Hello World!";
+
+    document.getElementById("demo").innerHTML = hello();
+  </script>
+  -->
+
+    <!-- Arrow function 
+  <h1>Arrow Function</h1>
+
+  <p>The <strong>this</strong> keyword represents the Header object.</p>
+
+  <button id="btn">Click Me!</button>
+
+  <p><strong>this</strong> represents:</p>
+
+  <p id="demo"></p>
+  -->
+
+    <!-- Another example from arrow function 
+  <script>
+    class Header {
+      constructor() {
+        this.color = "Red";
+      }
+
+      changeColor = () => {
+        document.getElementById("demo").innerHTML += this;
+      }
+    }
+
+    myheader = new Header();
+
+    //The window object calls the function:
+    window.addEventListener("load", myheader.changeColor);
+
+    //A button object calls the function:
+    document.getElementById("btn").addEventListener("click", myheader.changeColor);
+
+  </script>
+  -->
+
+    <!-- Regular Function 
+  <h1>Regular Function</h1>
+
+  <p>The <strong>this</strong> keyword represents different objects depending on how the function was called.</p>
+
+  <button id="btn">Click Me!</button>
+
+  <p><strong>this</strong> represents:</p>
+
+  <p id="demo"></p>
+
+  <p>See the difference before and after the button is clicked.</p>
+
+  <script>
+    class Header {
+      constructor() {
+        this.color = "Red";
+      }
+
+      changeColor = function () {
+        document.getElementById("demo").innerHTML += this;
+      }
+    }
+
+    myheader = new Header();
+
+    //The window object calls the function:
+    window.addEventListener("load", myheader.changeColor);
+
+    //A button object calls the function:
+    document.getElementById("btn").addEventListener("click", myheader.changeColor);
+
+  </script>
+  -->
+
+    <!-- 
+  <h1>Arrow Function</h1>
+
+  <p>As you can see in this example, you can skip the parentheses when you have only one parameter.</p>
+
+  <p id="demo"></p>
+
+  <script>
+    hello = val => "Hello " + val;
+
+    document.getElementById("demo").innerHTML = hello("World");
+  </script>
+  -->
+
+    <!--
+    <h1>Arrow Function</h1>
+
+<p>A demonstration of an arrow function in one line, with parameters.</p>
+
+<p id="demo"></p>
+  
+<script>
+hello = (val) => "Hello " + val;
+
+document.getElementById("demo").innerHTML = hello("World");
+</script>
+  -->
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////  -->
+
+    <!-- ***** REACT RENDER HTML ***** -->
+
+    <!-- Two examples 
+  <div id="root"></div>
+  -->
+    <!-- Example with header 
+  <header id="sandy"></header>
+  -->
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////  -->
+
+    <!-- ***** REACT RENDER JSX ***** -->
+
+    <!-- 
+  <div id="root"></div>
+  -->
+
+    <!-- ***** REACT RENDER COMPONENT ***** -->
+
+    <!-- 
+  <div id="root"></div>
+  -->
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////  -->
+
+    <!-- ***** REACT RENDER COMPONENT ***** -->
+
+    <!-- 
+  <div id="root"></div>
+  -->
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////  -->
+
+    <!-- ***** REACT RENDER STATE ***** -->
+
+    <!-- 
+  <div id="root"></div>
+  -->
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////  -->
+
+    <!-- ***** REACT RENDER LIFECYCLE ***** -->
+
+    <!-- 
+  <div id="root"></div>
+  -->
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////  -->
+
+    <!-- ***** REACT RENDER EVENTS ***** -->
+
+    <!--
+  <div id="root"></div>
+  -->
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////  -->
+
+    <!-- ***** REACT RENDER FORMS ***** -->
+
+    <!--
+  <div id="root"></div>
+  -->
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////  -->
+
+    <!-- ***** REACT RENDER CSS ***** -->
+
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+</body>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
 </html>
